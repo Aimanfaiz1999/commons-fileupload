@@ -100,7 +100,7 @@ public class ServletFileUpload extends FileUpload {
      *   error while communicating with the client or a problem while
      *   storing the uploaded content.
      */
-    public FileItemIterator getItemIterator(final HttpServletRequest request) throws FileUploadException, IOException {
+    public FileItemIterator getItemIterator(final HttpServletRequest request) throws IOException {
         return super.getItemIterator(new ServletRequestContext(request));
     }
 
