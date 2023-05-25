@@ -101,7 +101,7 @@ public class JakSrvltFileUpload extends FileUpload {
      *   storing the uploaded content.
      */
     public FileItemIterator getItemIterator(final HttpServletRequest request)
-    throws FileUploadException, IOException {
+    throws IOException {
         return super.getItemIterator(new JakSrvltRequestContext(request));
     }
 
