@@ -98,7 +98,7 @@ public class PortletFileUpload extends FileUpload {
      *   storing the uploaded content.
      */
     public FileItemIterator getItemIterator(final ActionRequest request)
-            throws FileUploadException, IOException {
+            throws  IOException {
         return super.getItemIterator(new PortletRequestContext(request));
     }
 
