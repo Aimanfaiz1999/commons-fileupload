@@ -30,11 +30,11 @@ public class PPP {
     }
 
     @Benchmark
-    @Fork(value = 1, warmups = 1)
+    @Fork(value = 1, warmups = 2)
     @Warmup(iterations = 1)
     @Measurement(iterations = 2)
-    @BenchmarkMode(Mode.AverageTime)
-    public void testSomeCode(PPP plan)
+    @BenchmarkMode(Mode.All)
+    public void aiman(PPP plan)
     {
         pp.setLowerCaseNames(plan.b);
     }
