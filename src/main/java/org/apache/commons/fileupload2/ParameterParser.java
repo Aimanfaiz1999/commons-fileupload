@@ -288,8 +288,8 @@ public class ParameterParser {
                 quoted = !quoted;
             }
             charEscaped = (!charEscaped && ch == '\\');
-            i2++;
-            pos++;
+            ++i2;
+            ++pos;
 
         }
         return getToken(true);
@@ -312,8 +312,8 @@ public class ParameterParser {
             if (isOneOf(ch, terminators)) {
                 break;
             }
-            i2++;
-            pos++;
+            ++i2;
+            ++pos;
         }
         return getToken(false);
     }
