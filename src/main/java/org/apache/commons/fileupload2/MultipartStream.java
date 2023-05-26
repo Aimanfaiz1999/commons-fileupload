@@ -630,13 +630,13 @@ public class MultipartStream {
         while (position <= boundaryLength) {
             if (boundary[position - 1] == boundary[candidate]) {
                 boundaryTable[position] = candidate + 1;
-                candidate++;
-                position++;
+                ++candidate;
+                ++position;
             } else if (candidate > 0) {
                 candidate = boundaryTable[candidate];
             } else {
                 boundaryTable[position] = 0;
-                position++;
+                ++position;
             }
         }
     }
@@ -663,7 +663,7 @@ public class MultipartStream {
      * @return The position of byte found, counting from beginning of the {@code buffer}, or {@code -1} if not found.
      */
     protected int findByte(final byte value, final int pos) {
-        for (int i = pos; i < tail; i++) {
+        for (int i = pos; i < tail; ++i) {
             if (buffer[i] == value) {
                 return i;
             }
@@ -686,8 +686,8 @@ public class MultipartStream {
             while (tablePos >= 0 && buffer[bufferPos] != boundary[tablePos]) {
                 tablePos = boundaryTable[tablePos];
             }
-            bufferPos++;
-            tablePos++;
+            ++bufferPos;
+            ++tablePos;
             if (tablePos == boundaryLength) {
                 return bufferPos - boundaryLength;
             }
