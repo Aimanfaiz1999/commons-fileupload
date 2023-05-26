@@ -496,7 +496,7 @@ public class MultipartStream {
      * @return {@code true} if {@code count} first bytes in arrays {@code a} and {@code b} are equal.
      */
     public static boolean arrayEquals(final byte[] a, final byte[] b, final int count) {
-        for (int i = 0; i < count; i++) {
+        for (int i = 0; i < count; ++i) {
             if (a[i] != b[i]) {
                 return false;
             }
