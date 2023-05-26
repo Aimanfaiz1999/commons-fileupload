@@ -118,7 +118,7 @@ public final class MimeUtility {
                         endWhiteSpace = offset;
                         break;
                     }
-                    offset++;
+                    ++offset;
                 }
             } else {
                 // we have a word token.  We need to scan over the word and then try to parse it.
@@ -130,7 +130,7 @@ public final class MimeUtility {
                     if (LINEAR_WHITESPACE.indexOf(ch) != -1) {
                         break;
                     }
-                    offset++;
+                    ++offset;
 
                     //NB:  Trailing whitespace on these header strings will just be discarded.
                 }
