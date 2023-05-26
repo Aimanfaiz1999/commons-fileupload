@@ -85,7 +85,7 @@ public class ParameterParser {
     private String getToken(final boolean quoted) {
         // Trim leading white spaces
         while ((i1 < i2) && (Character.isWhitespace(chars[i1]))) {
-            i1++;
+            ++i1;
         }
         // Trim trailing white spaces
         while ((i2 > i1) && (Character.isWhitespace(chars[i2 - 1]))) {
@@ -96,7 +96,7 @@ public class ParameterParser {
             && ((i2 - i1) >= 2)
             && (chars[i1] == '"')
             && (chars[i2 - 1] == '"')) {
-            i1++;
+            ++i1;
             i2--;
         }
         String result = null;
@@ -195,7 +195,7 @@ public class ParameterParser {
                     '=', separator });
             paramValue = null;
             if (hasChar() && (charArray[pos] == '=')) {
-                ++pos; // skip '='
+                pos++; // skip '='
                 paramValue = parseQuotedToken(new char[] {
                         separator });
 
@@ -288,8 +288,8 @@ public class ParameterParser {
                 quoted = !quoted;
             }
             charEscaped = (!charEscaped && ch == '\\');
-            ++i2;
-            ++pos;
+            i2++;
+            pos++;
 
         }
         return getToken(true);
@@ -312,8 +312,8 @@ public class ParameterParser {
             if (isOneOf(ch, terminators)) {
                 break;
             }
-            ++i2;
-            ++pos;
+            i2++;
+            pos++;
         }
         return getToken(false);
     }
