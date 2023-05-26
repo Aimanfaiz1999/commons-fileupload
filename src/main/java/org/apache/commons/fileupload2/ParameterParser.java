@@ -195,7 +195,7 @@ public class ParameterParser {
                     '=', separator });
             paramValue = null;
             if (hasChar() && (charArray[pos] == '=')) {
-                pos++; // skip '='
+                ++pos; // skip '='
                 paramValue = parseQuotedToken(new char[] {
                         separator });
 
@@ -209,7 +209,7 @@ public class ParameterParser {
                 }
             }
             if (hasChar() && (charArray[pos] == separator)) {
-                pos++; // skip separator
+                ++pos; // skip separator
             }
             if ((paramName != null) && !paramName.isEmpty()) {
                 paramName = RFC2231Utility.stripDelimiter(paramName);
